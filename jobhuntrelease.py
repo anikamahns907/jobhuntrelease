@@ -10,10 +10,17 @@ import json
 import os
 import re
 import random
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Telegram credentials
-TELEGRAM_BOT_TOKEN = "7926518272:AAE30fyTKsaUlS2Gf9J6f9uhgqVjHwW3KDE"
-TELEGRAM_CHAT_ID = "6628992524"
+TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
+
+if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+    raise ValueError("Please set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID environment variables")
 
 # Set up Chrome options for Selenium
 chrome_options = Options()
