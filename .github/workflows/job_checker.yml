@@ -31,6 +31,6 @@ jobs:
     
     - name: Run job checker
       env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        TELEGRAM_BOT_TOKEN: "7926518272:AAE30fyTKsaUlS2Gf9J6f9uhgqVjHwW3KDE"
+        TELEGRAM_CHAT_ID: "6628992524"
       run: python jobhuntrelease.py 
