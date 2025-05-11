@@ -432,12 +432,7 @@ if __name__ == "__main__":
     try:
         send_telegram_message("Test: This is a notification from your job script!")
         send_telegram_message("Job checker started! Will notify you of new 2026 grad jobs or fall co-op/internships from top 50 tech companies.")
-        while True:
-            check_jobs()
-            time.sleep(300)  # Check every 5 minutes
-    except KeyboardInterrupt:
-        print("Job checker stopped by user")
-        send_telegram_message("Job checker stopped by user")
+        check_jobs()
     except Exception as e:
         print(f"Fatal error: {str(e)}")
         send_telegram_message("Fatal error in job checker: " + str(e))
